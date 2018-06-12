@@ -3,7 +3,7 @@ package com.noel.olen;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
 
-import com.noel.olen.dao.AddressRepository;
+import com.noel.olen.repository.AddressRepository;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;

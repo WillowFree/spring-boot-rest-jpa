@@ -1,4 +1,4 @@
-package com.noel.olen.dao;
+package com.noel.olen.repository;
 
 public class ProductRepositoryTest {
 

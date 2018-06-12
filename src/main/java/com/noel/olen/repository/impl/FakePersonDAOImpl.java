@@ -1,4 +1,4 @@
-package com.noel.olen.dao;
+package com.noel.olen.repository.impl;
 
 import com.noel.olen.entity.Person;
 import java.util.Collection;
@@ -15,10 +15,10 @@ public class FakePersonDAOImpl /*implements PersonRepository */ {
   private static Map<Long, Person> persons = new HashMap<>();
 
   static {
-    Person noel = new Person(1L, "Noel", "DAO");
+    Person noel = new Person(1L, "Noel", "DAO", 43);
     persons.put(noel.getId(), noel);
 
-    Person amelie = new Person(2L, "Amelie", "GILLETTE");
+    Person amelie = new Person(2L, "Amelie", "GILLETTE", 37);
     persons.put(amelie.getId(), amelie);
   }
 

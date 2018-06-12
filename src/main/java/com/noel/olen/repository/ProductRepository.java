@@ -1,4 +1,4 @@
-package com.noel.olen.dao;
+package com.noel.olen.repository;
 
 import com.noel.olen.entity.Product;
 import org.springframework.data.repository.Repository;

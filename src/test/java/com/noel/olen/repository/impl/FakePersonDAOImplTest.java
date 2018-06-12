@@ -1,4 +1,4 @@
-package com.noel.olen.dao;
+package com.noel.olen.repository.impl;
 
 /**
  * Avec Java 7, la valeur des types entiers (byte, short, int, et long) peut être exprimée dans le
@@ -6,9 +6,12 @@ package com.noel.olen.dao;
  */
 
 import com.noel.olen.entity.Person;
+import com.noel.olen.repository.impl.FakePersonDAOImpl;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+@Ignore
 public class FakePersonDAOImplTest {
 
   @Autowired
@@ -34,7 +37,7 @@ public class FakePersonDAOImplTest {
   @Test
   public void updatePerson() {
 
-    Person person = new Person(1L, "prenom", "nom");
+    Person person = new Person(1L, "prenom", "nom", 20);
     fakePersonDAO.updatePerson(person);
   }
 

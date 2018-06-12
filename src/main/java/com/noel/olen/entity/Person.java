@@ -1,9 +1,12 @@
 package com.noel.olen.entity;
 
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
@@ -27,16 +30,32 @@ public class Person {
   @NotNull
   private String lastName;
 
+
+  private int age;
+
   public Person(String firstName, String lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  public Person(Long id, String firstName, String lastName) {
+  public Person(Long id, String firstName, String lastName, int age) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.age = age;
   }
+
+  public Person(Long id, String firstName, String lastName, int age, Set<Address> addresses) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.adresses = addresses;
+  }
+
+  @ManyToMany
+  private Set<Address> adresses = new HashSet<>();
+
 
   public Long getId() {
     return id;
@@ -60,5 +79,9 @@ public class Person {
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
+  }
+
+  public void addAdresse(Address address) {
+    adresses.add(address);
   }
 }
